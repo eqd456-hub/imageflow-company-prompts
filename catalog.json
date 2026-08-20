@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "1",
+  "catalogVersion": "2026-08-20.2",
+  "updatedAt": "2026-08-20T00:00:00+08:00",
+  "prompts": [
+    {
+      "id": "buyershow-standard",
+      "name": "买家秀【公司标准版】",
+      "prompt": "严格保持产品外观、颜色、材质、结构与比例一致。参考图只用于空间、构图和光线参考，生成真实消费者手机拍摄的连续买家秀照片，避免广告棚拍、拼贴和过度修图。",
+      "version": "1.0.0",
+      "updatedAt": "2026-08-20"
+    }
+  ],
+  "dialogs": [
+    {
+      "id": "tasks-final-prompt",
+      "target": {
+        "tableId": "tasks",
+        "fieldId": "agent"
+      },
+      "version": "1.0.0",
+      "updatedAt": "2026-08-20",
+      "userInstructionParts": [
+        {
+          "type": "text",
+          "value": "请根据以下公司提示词和产品需求，输出一条可直接用于图片生成的最终提示词。"
+        },
+        {
+          "type": "text",
+          "value": "\n\n公司提示词：\n"
+        },
+        {
+          "type": "field",
+          "fieldId": "commonPrompt"
+        },
+        {
+          "type": "text",
+          "value": "\n\n产品需求：\n"
+        },
+        {
+          "type": "field",
+          "fieldId": "need"
+        }
+      ],
+      "referenceFields": [],
+      "systemInstructionParts": [
+        {
+          "type": "text",
+          "value": "你是电商视觉提示词专家。严格保留产品外观、材质、颜色和结构约束；只输出最终可执行提示词，不解释过程，不虚构产品细节。"
+        }
+      ]
+    }
+  ]
+}
