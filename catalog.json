@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1",
-  "catalogVersion": "20260820101742",
+  "catalogVersion": "20260820102242",
   "prompts": [
     {
       "id": "skill_1787218433720_7zeie",
@@ -59,7 +59,7 @@
     }
   ],
   "releaseTemplate": {
-    "schemaVersion": "20260820101742",
+    "schemaVersion": "20260820102242",
     "tables": [
       {
         "id": "tasks",
