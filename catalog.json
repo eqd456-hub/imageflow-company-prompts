@@ -1,7 +1,14 @@
 {
   "schemaVersion": "1",
-  "catalogVersion": "20260820090013",
+  "catalogVersion": "20260820101742",
   "prompts": [
+    {
+      "id": "skill_1787218433720_7zeie",
+      "name": "菜菜子",
+      "prompt": "嘻嘻",
+      "version": "1.0.0",
+      "updatedAt": "2026-08-20"
+    },
     {
       "id": "buyershow-standard",
       "name": "买家秀【通用4宫格】",
@@ -50,5 +57,221 @@
       "referenceFields": [],
       "model": "doubao-seed-1-8-251228"
     }
-  ]
+  ],
+  "releaseTemplate": {
+    "schemaVersion": "20260820101742",
+    "tables": [
+      {
+        "id": "tasks",
+        "name": "生图任务",
+        "fields": [
+          {
+            "id": "sku",
+            "name": "型号",
+            "type": "text",
+            "width": 200,
+            "hidden": false
+          },
+          {
+            "id": "product",
+            "name": "产品图",
+            "type": "attachment",
+            "width": 200,
+            "hidden": false
+          },
+          {
+            "id": "reference",
+            "name": "参考图",
+            "type": "attachment",
+            "width": 200,
+            "hidden": false
+          },
+          {
+            "id": "need",
+            "name": "需求",
+            "type": "longText",
+            "width": 200,
+            "hidden": false
+          },
+          {
+            "id": "skill",
+            "name": "技能选择",
+            "type": "skillSelect",
+            "width": 200,
+            "hidden": false,
+            "config": {
+              "sourceTable": "skills",
+              "sourceKey": "skillName",
+              "autoUpdate": true
+            }
+          },
+          {
+            "id": "commonPrompt",
+            "name": "提示词库",
+            "type": "lookup",
+            "width": 200,
+            "hidden": false,
+            "config": {
+              "sourceTable": "skills",
+              "sourceKey": "skillName",
+              "sourceValue": "prompt",
+              "matchField": "skill",
+              "autoUpdate": true
+            }
+          },
+          {
+            "id": "agent",
+            "name": "最终提示词",
+            "type": "aiText",
+            "width": 200,
+            "hidden": false,
+            "config": {
+              "referenceFields": [],
+              "allowEmpty": true
+            }
+          },
+          {
+            "id": "imageParams",
+            "name": "图片参数",
+            "type": "imageParams",
+            "width": 200,
+            "hidden": false
+          },
+          {
+            "id": "image",
+            "name": "AI 图片生成",
+            "type": "aiImage",
+            "width": 200,
+            "hidden": false,
+            "config": {
+              "referenceFields": [
+                "product",
+                "reference"
+              ],
+              "autoUpdate": false
+            }
+          }
+        ]
+      },
+      {
+        "id": "skills",
+        "name": "Skill",
+        "fields": [
+          {
+            "id": "skillName",
+            "name": "技能名称",
+            "type": "text",
+            "width": 220,
+            "hidden": false
+          },
+          {
+            "id": "prompt",
+            "name": "提示词",
+            "type": "longText",
+            "width": 620,
+            "hidden": false
+          },
+          {
+            "id": "scope",
+            "name": "归属",
+            "type": "select",
+            "width": 130,
+            "hidden": false,
+            "options": [
+              "personal",
+              "company"
+            ]
+          },
+          {
+            "id": "skillVersion",
+            "name": "版本",
+            "type": "text",
+            "width": 110,
+            "hidden": false
+          },
+          {
+            "id": "protected",
+            "name": "受保护",
+            "type": "checkbox",
+            "width": 110,
+            "hidden": false
+          },
+          {
+            "id": "managed",
+            "name": "公司托管",
+            "type": "checkbox",
+            "width": 110,
+            "hidden": false
+          },
+          {
+            "id": "updated",
+            "name": "更新时间",
+            "type": "text",
+            "width": 180,
+            "hidden": false
+          }
+        ]
+      },
+      {
+        "id": "prompts",
+        "name": "提示词库",
+        "fields": [
+          {
+            "id": "title",
+            "name": "名称",
+            "type": "text",
+            "width": 220,
+            "hidden": false
+          },
+          {
+            "id": "content",
+            "name": "提示词内容",
+            "type": "longText",
+            "width": 620,
+            "hidden": false
+          },
+          {
+            "id": "tag",
+            "name": "标签",
+            "type": "select",
+            "width": 170,
+            "hidden": false,
+            "options": [
+              "产品一致性",
+              "场景",
+              "摄影",
+              "审核"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "assets",
+        "name": "素材库",
+        "fields": [
+          {
+            "id": "assetName",
+            "name": "素材名称",
+            "type": "text",
+            "width": 180,
+            "hidden": false
+          },
+          {
+            "id": "asset",
+            "name": "图片素材",
+            "type": "attachment",
+            "width": 180,
+            "hidden": false
+          },
+          {
+            "id": "field_1787209769209_91a2c",
+            "name": "参考描述",
+            "type": "longText",
+            "width": 180,
+            "hidden": false
+          }
+        ]
+      }
+    ]
+  }
 }
