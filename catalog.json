@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1",
-  "catalogVersion": "20260821054717",
+  "catalogVersion": "20260821060434",
   "prompts": [
     {
       "id": "skill_1787218433720_7zeie",
@@ -43,15 +43,7 @@
       "userInstructionParts": [
         {
           "type": "text",
-          "value": "引用"
-        },
-        {
-          "type": "field",
-          "fieldId": "commonPrompt"
-        },
-        {
-          "type": "text",
-          "value": "，结合"
+          "value": "根据当前"
         },
         {
           "type": "field",
@@ -59,21 +51,32 @@
         },
         {
           "type": "text",
-          "value": "小量修改。"
+          "value": "和"
+        },
+        {
+          "type": "field",
+          "fieldId": "reference"
+        },
+        {
+          "type": "text",
+          "value": "，对已选择的提示词模板进行适配修改。\r\n保持模板原有结构、格式和核心逻辑不变，不重新创作提示词。\r\n只根据需求调整产品类型、使用空间、摆放方式、软装搭配、环境特征和风格细节。\r\n如果提供参考图片，参考图片用于优化空间、风格和软装描述；如果与模板默认内容冲突，以需求和参考图片为准。\r\n最终只输出修改后的完整提示词。"
         }
       ],
       "systemInstructionParts": [
         {
           "type": "text",
-          "value": "你是电商视觉提示词专家。严格保留产品外观、材质、颜色和结构约束；只输出最终可执行提示词，不解释过程，不虚构产品细节。"
+          "value": "当前提示词模板为经过验证可用于生产的模板。你的职责是基于模板进行变量替换和局部润色，而不是重新编写模板。\r\n除非当前需求明确要求，否则必须保持模板原有结构、顺序、表达方式、约束条件和生成目标不变。\r\n当需求或参考图片提供明确方向时，优先调整模板中的空间、风格、软装和环境描述，但不得改变模板核心生成逻辑，不得破坏产品一致性要求。"
         }
       ],
-      "referenceFields": [],
+      "referenceFields": [
+        "product",
+        "reference"
+      ],
       "model": "doubao-seed-1-8-251228"
     }
   ],
   "releaseTemplate": {
-    "schemaVersion": "20260821054717",
+    "schemaVersion": "20260821060434",
     "tables": [
       {
         "id": "tasks",
@@ -135,12 +138,15 @@
           },
           {
             "id": "agent",
-            "name": "最终提示词",
+            "name": "提示词",
             "type": "aiText",
             "width": 180,
             "hidden": false,
             "config": {
-              "referenceFields": [],
+              "referenceFields": [
+                "product",
+                "reference"
+              ],
               "allowEmpty": true
             }
           },
