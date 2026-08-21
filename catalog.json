@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1",
-  "catalogVersion": "20260821070517",
+  "catalogVersion": "20260821071132",
   "prompts": [
     {
       "id": "skill_1787218433720_7zeie",
@@ -99,7 +99,7 @@
     }
   ],
   "releaseTemplate": {
-    "schemaVersion": "20260821070517",
+    "schemaVersion": "20260821071132",
     "tables": [
       {
         "id": "tasks",
@@ -109,35 +109,35 @@
             "id": "sku",
             "name": "型号",
             "type": "text",
-            "width": 180,
+            "width": 240,
             "hidden": false
           },
           {
             "id": "product",
             "name": "产品图",
             "type": "attachment",
-            "width": 180,
+            "width": 240,
             "hidden": false
           },
           {
             "id": "reference",
             "name": "参考图",
             "type": "attachment",
-            "width": 180,
+            "width": 240,
             "hidden": false
           },
           {
             "id": "need",
             "name": "需求",
             "type": "longText",
-            "width": 180,
+            "width": 240,
             "hidden": false
           },
           {
             "id": "skill",
             "name": "技能选择",
             "type": "skillSelect",
-            "width": 180,
+            "width": 240,
             "hidden": false,
             "config": {
               "sourceTable": "skills",
@@ -149,7 +149,7 @@
             "id": "commonPrompt",
             "name": "提示词库",
             "type": "lookup",
-            "width": 180,
+            "width": 240,
             "hidden": false,
             "config": {
               "sourceTable": "skills",
@@ -163,7 +163,7 @@
             "id": "agent",
             "name": "提示词",
             "type": "aiText",
-            "width": 180,
+            "width": 240,
             "hidden": false,
             "config": {
               "referenceFields": [
@@ -177,14 +177,14 @@
             "id": "imageParams",
             "name": "图片参数",
             "type": "imageParams",
-            "width": 180,
+            "width": 240,
             "hidden": false
           },
           {
             "id": "image",
             "name": "图片生成",
             "type": "aiImage",
-            "width": 248,
+            "width": 240,
             "hidden": false,
             "config": {
               "referenceFields": [
