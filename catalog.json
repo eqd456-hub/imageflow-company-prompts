@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1",
-  "catalogVersion": "20260824102723",
+  "catalogVersion": "20260824170544",
   "prompts": [
     {
       "id": "skill_1787303355109_uette",
@@ -94,7 +94,7 @@
     }
   ],
   "releaseTemplate": {
-    "schemaVersion": "20260824102723",
+    "schemaVersion": "20260824170544",
     "tables": [
       {
         "id": "tasks",
