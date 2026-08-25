@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1",
-  "catalogVersion": "20260825040335",
+  "catalogVersion": "20260825084118",
   "prompts": [
     {
       "id": "skill_1787303355109_uette",
@@ -114,8 +114,11 @@
       "model": "doubao-seed-1-8-251228"
     }
   ],
+  "deletedPromptIds": [
+    "buyershow-standard"
+  ],
   "releaseTemplate": {
-    "schemaVersion": "20260825040335",
+    "schemaVersion": "20260825084118",
     "tables": [
       {
         "id": "tasks",
@@ -123,9 +126,9 @@
         "fields": [
           {
             "id": "sku",
-            "name": "型号",
+            "name": "任务名称",
             "type": "text",
-            "width": 240,
+            "width": 180,
             "hidden": false
           },
           {
@@ -146,7 +149,7 @@
             "id": "need",
             "name": "需求",
             "type": "longText",
-            "width": 348,
+            "width": 209,
             "hidden": false
           },
           {
